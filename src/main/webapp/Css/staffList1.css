@@ -1,0 +1,227 @@
+body {
+    background: #f4f6fb;
+}
+
+main.main-content {
+    flex: 1;
+    margin-left: 220px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background: transparent;
+}
+
+h1 {
+    color: #232946;
+    margin-top: 24px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Search Form Styles */
+form.search-form {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+    clear: both;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    background: #fff;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #232946;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    padding: 9px 18px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button.search-btn {
+    background: #2563eb;
+    color: white;
+    min-width: 90px;
+}
+
+button.search-btn:hover {
+    background: #164bb8;
+}
+
+button.create-btn {
+    background: #22c55e;
+    color: #fff;
+    margin-bottom: 12px;
+    float: right;
+    min-width: 110px;
+    border: 1.5px solid #1e9c46;
+}
+
+button.create-btn:hover {
+    background: #1e9c46;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(34,40,85,0.07);
+    overflow: hidden;
+    margin-top: 10px;
+    clear: both;
+}
+
+th, td {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ececec;
+    text-align: left;
+    word-wrap: break-word; /* Allows text to wrap in the cells */
+    text-align: center;
+}
+
+th {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f8fb;
+}
+
+tbody tr:hover {
+    background: #f0f8ff;
+}
+
+/* Status Styles */
+.status-active {
+    background-color: #22c55e;
+    color: #fff;
+    padding: 3px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-inactive {
+    background-color: #dc3545;
+    color: white;
+    padding: 3px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Action Column */
+td.action-col {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    min-width: 280px;
+    white-space: nowrap;
+}
+
+td.action-col form {
+    margin: 0;
+}
+
+th:last-child {
+    min-width: 280px;
+    text-align: center;
+}
+
+/* Action Buttons */
+.btn-detail, .btn-edit, .btn-delete {
+    min-width: 70px;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none !important;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-detail {
+    background: #e6faea;
+    color: #16a34a !important;
+}
+
+.btn-detail:hover {
+    background: #bbebcd;
+    color: #166534 !important;
+    text-decoration: none !important;
+}
+
+.btn-edit {
+    background: #fef9c3 !important;
+    color: #92400e !important;
+}
+
+.btn-edit:hover {
+    background: #fde047 !important;
+    color: #78350f !important;
+    text-decoration: none !important;
+}
+
+.btn-delete {
+    background: #f87171;
+    color: #fff !important;
+}
+
+.btn-delete:hover {
+    background: #e11d48;
+    color: #fff !important;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.bg-secondary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    padding: 10px 15px;
+    border-radius: 30px;
+}

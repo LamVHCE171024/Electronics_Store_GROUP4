@@ -1,0 +1,58 @@
+.divAllImg {
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.divAnhLon {
+    height: 250px;
+    width: 100%;
+}
+
+.anhLon {
+    height: 90%;
+    width: 100%;
+    border: none;
+}
+
+.div4AnhNho{
+    /*    margin-top: 4%;*/
+}
+
+.img-thumbnail{
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    width: 20%;
+}
+
+.divAnhLon img {
+    transition: transform 0.3s ease;
+}
+
+.divAnhLon img:hover {
+    transform: scale(1.02);
+}
+
+.img-thumbnail img{
+    width: 100%;
+}
+
+.img-thumbnail img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.img-thumbnail:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Trong file Css/imageProductDetail.css hoặc <style> */
+.main-img {
+    width: 100%;
+    max-height: 400px;       /* Điều chỉnh cao tối đa nếu muốn */
+    object-fit: contain;     /* Giữ nguyên tỷ lệ, không cắt ảnh */
+    border-radius: 10px;
+}
+
+

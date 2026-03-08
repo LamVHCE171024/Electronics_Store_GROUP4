@@ -1,0 +1,193 @@
+/* ---------- Layout Căn Lề Với Sidebar ---------- */
+.wrapper {
+    margin-left: 180px; /* Canh giống Supplier sidebar */
+    padding: 0;
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+
+.main-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30, 86, 160, 0.06), 0 1.5px 7px rgba(0,0,0,0.04);
+    padding: 32px 24px;
+    margin-top: 32px;
+}
+
+/* ---------- Tiêu Đề ---------- */
+.main-content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #223363;
+}
+
+/* ---------- Search Bar + Button ---------- */
+.d-flex input[type="text"] {
+    border-radius: 12px;
+    border: 1.5px solid #d3e1ee;
+    padding: 10px 18px;
+    font-size: 1.05rem;
+    background: #fafdff;
+    box-shadow: 0 1px 6px rgba(30, 86, 160, 0.06);
+    outline: none;
+    transition: border 0.18s;
+}
+.d-flex input[type="text"]:focus {
+    border-color: #2367f2;
+}
+
+.btn.btn-primary {
+    background: #2367f2;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+}
+.btn.btn-primary:hover {
+    background: #174ea6;
+}
+
+.btn.btn-secondary {
+    background: #71717a;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+}
+.btn.btn-secondary:hover {
+    background: #52525b;
+}
+
+.btn.btn-success {
+    background: #22c55e;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+}
+.btn.btn-success:hover {
+    background: #16a34a;
+}
+
+/* ---------- Table Style ---------- */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(30, 86, 160, 0.045);
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: #2367f2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px;
+    text-align: center;
+}
+
+.table tbody td {
+    font-size: 0.97rem;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #f1f5f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f3f6fd;
+}
+
+/* ---------- Button Actions ---------- */
+.btn-view {
+    background: #2367f2 !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-size: 0.96rem;
+    border: none;
+}
+.btn-view:hover {
+    background: #174ea6 !important;
+}
+
+.btn-edit {
+    background: #ffd600 !important;
+    color: #665c00 !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-size: 0.96rem;
+    border: none;
+}
+.btn-edit:hover {
+    background: #ffb300 !important;
+    color: #fff !important;
+}
+
+.btn-delete {
+    background: #f87171 !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-size: 0.96rem;
+    border: none;
+}
+.btn-delete:hover {
+    background: #dc2626 !important;
+}
+
+/* ---------- Badge Status ---------- */
+.badge-status-active,
+.badge.bg-success {
+    background: #22c55e !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.96rem;
+    border-radius: 14px;
+    padding: 4px 16px;
+}
+
+/* ---------- Responsive Mobile ---------- */
+@media (max-width: 900px) {
+    .main-content h1 {
+        font-size: 1.5rem;
+    }
+    .btn, .btn-view, .btn-edit, .btn-delete {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    .table th, .table td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f4f6fb;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main.main-content {
+    flex: 1;
+}

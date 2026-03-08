@@ -1,0 +1,231 @@
+/* ProductManagementForAdmin.css - Optimized with smaller table */
+
+body {
+    background: #f4f6fb;
+}
+
+.container {
+    background: transparent;
+    margin-left: 240px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+    max-width: calc(100vw - 240px); /* Constrain container width */
+    
+}
+
+h1 {
+    color: #232946;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Search Form Styles */
+.search-container {
+    display: flex;
+    gap: 0;
+    margin-bottom: 22px;
+    max-width: 400px; /* Reduced from 500px */
+}
+
+.search-container .form-control {
+    padding: 8px 12px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
+    border-radius: 8px 0 0 8px;
+    border: 1.5px solid #ccc;
+    border-right: none;
+    background: #fff;
+    transition: border-color 0.3s;
+    flex: 1;
+}
+
+.search-container .form-control:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: none;
+    border-right: none;
+}
+
+.search-container .btn {
+    padding: 8px 16px; /* Reduced padding */
+    font-weight: 700;
+    font-size: 14px; /* Reduced font size */
+    background: #2563eb;
+    color: white;
+    border: 1.5px solid #2563eb;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.search-container .btn:hover {
+    background: #164bb8;
+    border-color: #164bb8;
+}
+
+/* Table Container */
+.table-container {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(34,40,85,0.07);
+    overflow: hidden;
+    margin-top: 20px;
+    max-width: 100%; /* Ensure container doesn't overflow */
+    overflow-x: auto; /* Add horizontal scroll if needed */
+}
+
+/* Table Styles - Made more compact */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px; /* Reduced from 14px */
+    margin: 0;
+    border: none;
+    table-layout: fixed; /* Fixed layout for better control */
+}
+
+/* Column width distribution */
+.table th:nth-child(1), .table td:nth-child(1) { width: 8%; } /* ID */
+.table th:nth-child(2), .table td:nth-child(2) { width: 25%; } /* Product Name */
+.table th:nth-child(3), .table td:nth-child(3) { width: 15%; } /* Price */
+.table th:nth-child(4), .table td:nth-child(4) { width: 12%; } /* Discount */
+.table th:nth-child(5), .table td:nth-child(5) { width: 15%; } /* Status */
+.table th:nth-child(6), .table td:nth-child(6) { width: 25%; } /* Actions */
+
+.table th,
+.table td {
+    padding: 10px 12px; /* Reduced padding */
+    border-bottom: 1px solid #ececec;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table thead th {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem; /* Slightly smaller */
+    border-bottom: none;
+    white-space: nowrap;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > td {
+    background: #f8fafc;
+}
+
+.table-hover > tbody > tr:hover > td {
+    background: #f0f8ff;
+}
+
+/* Status Badge Styles - Made smaller */
+.badge {
+    padding: 4px 10px; /* Reduced padding */
+    border-radius: 20px;
+    font-size: 11px; /* Reduced font size */
+    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.bg-success {
+    background-color: #22c55e;
+    color: #fff;
+}
+
+.bg-warning {
+    background-color: #f59e0b;
+    color: #fff;
+}
+
+/* Action Buttons - Made more compact */
+.action-buttons {
+    display: flex;
+    gap: 3px; /* Reduced gap */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.btn-sm {
+    padding: 4px 8px; /* Reduced padding */
+    font-size: 11px; /* Reduced font size */
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px; /* Reduced gap */
+    white-space: nowrap;
+    min-width: auto;
+}
+
+.btn-sm i {
+    font-size: 10px; /* Smaller icons */
+}
+
+.btn-info {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-success {
+    background: #22c55e;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #16a34a;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(34,40,85,0.1);
+    margin-top: 20px;
+    padding: 16px 20px;
+}
+
+.alert-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
