@@ -9,12 +9,12 @@ import dao.CategoryDAO;
 import dao.CustomerDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import model.Account;
 import model.Category;
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAO();
-        List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+        List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
         request.setAttribute("categoryList", categoryList);
         request.getRequestDispatcher("WEB-INF/View/account/login.jsp").forward(request, response);
     }
@@ -123,3 +123,4 @@ public class LoginServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
