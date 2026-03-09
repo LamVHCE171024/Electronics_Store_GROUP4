@@ -9,11 +9,11 @@ import dao.CategoryDAO;
 import dao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.List;
 import model.Brand;
@@ -22,7 +22,7 @@ import model.Product;
 
 /**
  *
- * @author HP - Gia Khiêm
+ * @author pc
  */
 @WebServlet(name = "FilterProductServlet", urlPatterns = {"/FilterProduct"})
 public class FilterProductServlet extends HttpServlet {
@@ -92,7 +92,7 @@ public class FilterProductServlet extends HttpServlet {
         }
         
         CategoryDAO categoryDAO = new CategoryDAO();
-        List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+        List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
         request.setAttribute("categoryList", categoryList);
 
         request.setAttribute("productList", productList);
@@ -128,3 +128,4 @@ public class FilterProductServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
