@@ -414,3 +414,4 @@ public class CartDAO extends DBContext {
         return false; // Return false if product not found or no quantity left
     }
 }
+
