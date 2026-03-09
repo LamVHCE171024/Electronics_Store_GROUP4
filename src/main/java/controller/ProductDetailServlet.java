@@ -8,11 +8,11 @@ import dao.CategoryDAO;
 import dao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import model.CategoryDetail;
 import model.CategoryDetailGroup;
@@ -30,7 +30,7 @@ import model.RatingReplies;
 
 /**
  *
- * @author HP - Gia Khiêm
+ * @author pc
  */
 @WebServlet(name = "ProductDetailServlet", urlPatterns = {"/ProductDetail"})
 public class ProductDetailServlet extends HttpServlet {
@@ -83,13 +83,13 @@ public class ProductDetailServlet extends HttpServlet {
             int productId = Integer.parseInt(productIdStr);
             int categoryId = Integer.parseInt(categoryIdStr);
 
-            // Lấy thông tin chi tiết sản phẩm
+            // Láº¥y thÃ´ng tin chi tiáº¿t sáº£n pháº©m
             List<CategoryDetailGroup> cateGroupList = cateDao.getCategoryDetailGroupById(categoryId);
             List<CategoryDetail> cateDetailList = cateDao.getCategoryDetailById(categoryId);
             Product product = proDao.getProductById(productId);
             List<ProductDetail> productDetailList = proDao.getProductDetailById(productId);
 
-            // Lấy danh sách đánh giá và phản hồi
+            // Láº¥y danh sÃ¡ch Ä‘Ã¡nh giÃ¡ vÃ  pháº£n há»“i
             ProductRatingDAO ratingDAO = new ProductRatingDAO();
             CustomerDAO customerDAO = new CustomerDAO();
             RatingRepliesDAO repliesDAO = new RatingRepliesDAO();
@@ -98,7 +98,7 @@ public class ProductDetailServlet extends HttpServlet {
             int visibleRatingCount = 0;
 
             for (ProductRating rating : productRatings) {
-                if (!rating.isIsDeleted()) {  // <-- chỉ tính đánh giá chưa bị ẩn
+                if (!rating.isIsDeleted()) {  // <-- chá»‰ tÃ­nh Ä‘Ã¡nh giÃ¡ chÆ°a bá»‹ áº©n
                     totalStars += rating.getStar();
                     visibleRatingCount++;
                 }
@@ -119,7 +119,7 @@ public class ProductDetailServlet extends HttpServlet {
             }
             request.setAttribute("averageRating", averageRating);
 
-            // Truyền dữ liệu sang JSP
+            // Truyá»n dá»¯ liá»‡u sang JSP
             request.setAttribute("product", product);
             request.setAttribute("cateGroupList", cateGroupList);
             request.setAttribute("cateDetailList", cateDetailList);
@@ -161,3 +161,4 @@ public class ProductDetailServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

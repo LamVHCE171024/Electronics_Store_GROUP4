@@ -7,12 +7,12 @@ package controller;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -61,7 +61,7 @@ public class ResetPasswordServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Boolean otpVerified = (Boolean) session.getAttribute("otpVerified");
 
-        // Nếu chưa verify OTP thì đưa về trang ForgotPassword
+        // Náº¿u chÆ°a verify OTP thÃ¬ Ä‘Æ°a vá» trang ForgotPassword
         if (otpVerified == null || !otpVerified) {
             response.sendRedirect("ForgotPassword");
             return;
@@ -112,7 +112,7 @@ public class ResetPasswordServlet extends HttpServlet {
             session.removeAttribute("otpManager");
             session.removeAttribute("otpPurpose");
 
-            // Chuyển đến trang login với thông báo
+            // Chuyá»ƒn Ä‘áº¿n trang login vá»›i thÃ´ng bÃ¡o
             session.setAttribute("message", "Password reset successfully. Please login.");
             response.sendRedirect("Login");
         } else {
@@ -132,3 +132,4 @@ public class ResetPasswordServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

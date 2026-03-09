@@ -7,12 +7,12 @@ package controller;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import utils.EmailService;
 import utils.OTPManager;
 
@@ -79,18 +79,18 @@ public class ForgotPasswordServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AccountDAO dao = new AccountDAO();
 
-        // Kiểm tra email có tồn tại không
+        // Kiá»ƒm tra email cÃ³ tá»“n táº¡i khÃ´ng
         if (!dao.checkEmailExisted(email)) {
             request.setAttribute("error", "Email does not exist in the system.");
             request.getRequestDispatcher("WEB-INF/View/account/forgot-password.jsp").forward(request, response);
             return;
         }
 
-        // Tạo OTP mới
+        // Táº¡o OTP má»›i
         int otpCode = EmailService.generateVerificationCode();
-        OTPManager otpManager = new OTPManager(otpCode, 5); // hết hạn sau 5 phút
+        OTPManager otpManager = new OTPManager(otpCode, 5); // háº¿t háº¡n sau 5 phÃºt
 
-        // Gửi OTP qua email
+        // Gá»­i OTP qua email
         boolean emailSent = EmailService.sendOTPEmail(email, otpCode, "RESET_PASSWORD");
         if (!emailSent) {
             request.setAttribute("error", "Failed to send OTP email. Please try again later.");
@@ -98,12 +98,12 @@ public class ForgotPasswordServlet extends HttpServlet {
             return;
         }
 
-        // Lưu OTP và mục đích vào session
+        // LÆ°u OTP vÃ  má»¥c Ä‘Ã­ch vÃ o session
         session.setAttribute("otpManager", otpManager);
-        session.setAttribute("otpPurpose", "forgot"); // ⚠️ Đúng là 'forgot' để Verify xử lý đúng!
+        session.setAttribute("otpPurpose", "forgot"); // âš ï¸ ÄÃºng lÃ  'forgot' Ä‘á»ƒ Verify xá»­ lÃ½ Ä‘Ãºng!
         session.setAttribute("resetEmail", email);
 
-        // Điều hướng đến trang xác minh OTP
+        // Äiá»u hÆ°á»›ng Ä‘áº¿n trang xÃ¡c minh OTP
         response.sendRedirect("Verify");
     }
 
@@ -118,3 +118,4 @@ public class ForgotPasswordServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
