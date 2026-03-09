@@ -330,3 +330,4 @@ public class AccountDAO extends DBContext {
         System.out.println(dao.hashMD5(pass));
     }
 }
+

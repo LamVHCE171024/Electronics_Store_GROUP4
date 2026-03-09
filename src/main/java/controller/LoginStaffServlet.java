@@ -8,12 +8,12 @@ import dao.AccountDAO;
 import dao.StaffDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
 import model.Staff;
 
@@ -83,12 +83,12 @@ public class LoginStaffServlet extends HttpServlet {
         Account acc = dao.verifyMD5(email, pass);
         if (acc != null && acc.getAccountID() != -1) {
             if (acc.getRoleID() == 2) {
-                // Lấy Staff theo AccountID
+                // Láº¥y Staff theo AccountID
                 int staffId = staffDAO.getStaffIdByAccountId(acc.getAccountID());
                 Staff staff = staffDAO.getStaffById(staffId);
 
-                session.setAttribute("user", acc);   // Nếu cần dùng thông tin Account
-                session.setAttribute("staff", staff); // Đây là đối tượng Staff thực sự!
+                session.setAttribute("user", acc);   // Náº¿u cáº§n dÃ¹ng thÃ´ng tin Account
+                session.setAttribute("staff", staff); // ÄÃ¢y lÃ  Ä‘á»‘i tÆ°á»£ng Staff thá»±c sá»±!
                 session.setAttribute("role", acc.getRoleID());
 
                 response.sendRedirect("StaffDashboard");
@@ -113,3 +113,4 @@ public class LoginStaffServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
