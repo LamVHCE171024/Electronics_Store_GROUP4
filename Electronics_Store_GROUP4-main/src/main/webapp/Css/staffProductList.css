@@ -1,0 +1,184 @@
+/* === Table Layout === */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(34, 40, 85, 0.1);
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    padding: 14px 16px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+}
+
+.table thead {
+    background-color: #f4f6f8;
+    color: #212529;
+    font-weight: 600;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9fbff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #edf4ff;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+/* === Header Cell === */
+.tieuDe {
+    text-align: center;
+    font-weight: 700;
+    color: #1d1d1f;
+    padding: 14px 12px;
+    text-transform: uppercase;
+    font-size: 13px;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* === Table Header Row === */
+.tableRow {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+/* === Buttons Style === */
+.btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn i {
+    font-size: 14px;
+}
+
+/* === Button Primary === */
+.btn-primary {
+    background-color: #00b8d9;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #009ec2;
+}
+
+/* === Button Danger === */
+.btn-danger {
+    background-color: #e64942;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #cc3c37;
+}
+
+/* === Button Warning === */
+.btn-warning {
+    background-color: #f0ad4e;
+    border: none;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #ec971f;
+}
+
+/* === Add Button (Floating style) === */
+.add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #28a745;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 50px;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+.add-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+}
+
+.pretty-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.pretty-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pretty-checkbox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.pretty-checkbox label:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.pretty-checkbox input:checked + label {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.pretty-checkbox input:checked + label:after {
+    display: block;
+}
+
+.table td .btn {
+        font-size: 12px;
+        padding: 8px 8px;
+        white-space: nowrap;
+    }
+
+

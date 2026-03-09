@@ -1,0 +1,91 @@
+body {
+    background: #f4f6fb;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+h1 {
+    color: #232946;
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table.table {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(34, 40, 85, 0.07);
+    overflow: hidden;
+}
+
+table.table th {
+    background: #2563eb;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+table.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.table tbody tr:nth-child(even) {
+    background-color: #f4f8fb;
+}
+
+table.table tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Action Buttons */
+.btn-sm {
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 6px 14px;
+    min-width: 70px;
+}
+
+
+
+/* Search and Create */
+form.d-flex input[type="text"] {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+form.d-flex input[type="text"]:focus {
+    border-color: #232946;
+    outline: none;
+}
+
+form.d-flex button {
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.btn-success {
+    background: #22c55e;
+    border: 1.5px solid #1e9c46;
+    color: white;
+    min-width: 110px;
+}
+
+.btn-success:hover {
+    background: #1e9c46;
+}
+

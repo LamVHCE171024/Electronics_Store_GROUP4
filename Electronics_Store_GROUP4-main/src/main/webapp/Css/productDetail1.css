@@ -1,0 +1,156 @@
+/* BẢNG TỔNG */
+.category-table {
+    width: 100%;
+    border-collapse: separate;           /* để dùng border-spacing */
+    background-color: transparent;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 7px;
+    border-collapse: separate;    /* 👈 phải có dòng này để border-spacing hoạt động */
+    border-spacing: 0 10px;       /* 👈 khoảng cách giữa các hàng */
+}
+
+/* CÁC Ô BẢNG */
+.category-table th, .category-table td {
+    padding: 4px 16px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+/* DÒNG CHI TIẾT: tạo kiểu card cho từng dòng */
+.category-table tr:not(.group-header) {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 10px;
+}
+
+/* NHÓM TIÊU ĐỀ (Group Header) */
+.group-header {
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.group-header td {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.group-header:hover td {
+    background-color: #e0e0e0;
+}
+
+.group-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* TÊN THUỘC TÍNH */
+.category-name {
+    font-weight: 500;
+    color: #444;
+    width: 30%; /* 👈 giảm chiều dài */
+    font-size: 13px; /* 👈 giảm kích thước chữ */
+    padding-top: 16px;
+}
+
+/* GIÁ TRỊ THUỘC TÍNH */
+.attribute-values {
+    color: #555;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 12px;
+    flex: 1; /* TỰ ĐỘNG CHIẾM PHẦN CÒN LẠI */
+}
+
+/* ITEM GIÁ TRỊ */
+.attribute-item {
+    background-color: #adb5bd;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px; /* 👈 nhỏ hơn */
+    padding: 4px 10px; /* 👈 bớt dày */
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+    cursor: default;
+    line-height: 1.4;
+    user-select: none;
+}
+
+.attribute-input {
+    background-color: #adb5bd;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+
+    display: inline-block;
+    width: auto;              /* 👈 Tự động giãn theo chữ */
+    max-width: 100%;          /* 👈 Không tràn vùng cha */
+    white-space: nowrap;      /* 👈 Không xuống dòng */
+
+    box-sizing: border-box;
+    line-height: 1.4;
+    cursor: text;
+    user-select: auto;
+}
+
+
+
+/* THÔNG BÁO KHÔNG CÓ DỮ LIỆU */
+.no-data-message {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-style: italic;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* ẨN/HIỆN NHÓM CHI TIẾT */
+.group-details {
+    transition: all 0.3s ease;
+}
+
+.group-details.hidden {
+    display: none;
+}
+
+.group-cell {
+    padding: 0;
+}
+
+.group-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 12px;
+}
+
+.arrow-icon {
+    font-size: 18px;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+

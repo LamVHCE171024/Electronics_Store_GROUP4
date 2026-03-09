@@ -1,0 +1,72 @@
+/* categoryList.css - CSS cho bảng danh mục */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(34, 40, 85, 0.08);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9fbff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0f4ff;
+    cursor: pointer;
+}
+.tableRow{
+    background-color: #2563EB;
+}
+
+.tieuDe {
+    font-weight: 600;
+    color: #232946;
+    font-size: 15px;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.btn-primary {
+     border: none;
+    color: #fff;
+}
+
+.btn-danger {
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #00b0e6;
+}
+
+.btn-danger:hover {
+    background-color: #e34747;
+}
+
+.custom-table > thead > tr > th {
+  background-color: #2563eb !important;
+  color: #fff !important;
+}
+
+
+
