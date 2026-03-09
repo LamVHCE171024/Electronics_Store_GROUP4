@@ -4,12 +4,12 @@ import dao.CartDAO;
 import dao.ProductDAO;
 import java.io.IOException;
 import java.util.List;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
 import model.CartItem;
 
@@ -80,14 +80,14 @@ public class CartListServlet extends HttpServlet {
                 int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
                 int newQuantity = Integer.parseInt(request.getParameter("quantity"));
 
-                // Kiểm tra số lượng hợp lệ
+                // Kiá»ƒm tra sá»‘ lÆ°á»£ng há»£p lá»‡
                 if (newQuantity <= 0) {
                     session.setAttribute("message", "Quantity must be greater than 0!");
                     response.sendRedirect("CartList?action=list&accountId=" + accountId);
                     return;
                 }
 
-                // Lấy thông tin cart item để validation
+                // Láº¥y thÃ´ng tin cart item Ä‘á»ƒ validation
                 CartItem cartItem = cartDAO.getCartItemById(cartItemId);
                 if (cartItem == null) {
                     session.setAttribute("message", "Cart item not found!");
@@ -95,7 +95,7 @@ public class CartListServlet extends HttpServlet {
                     return;
                 }
 
-//                // Cập nhật số lượng
+//                // Cáº­p nháº­t sá»‘ lÆ°á»£ng
 //                boolean success = cartDAO.updateCartItemQuantity(cartItemId, newQuantity);
 //
 //                if (success) {
@@ -124,3 +124,4 @@ public class CartListServlet extends HttpServlet {
         return "Servlet for listing cart items by AccountID";
     }
 }
+
