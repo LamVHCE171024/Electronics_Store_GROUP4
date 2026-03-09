@@ -9,11 +9,11 @@ import dao.CategoryDAO;
 import dao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import model.Brand;
 import model.Category;
@@ -21,7 +21,7 @@ import model.Product;
 
 /**
  *
- * @author HP - Gia Khiêm
+ * @author pc
  */
 @WebServlet(name = "SearchProductServlet", urlPatterns = {"/SearchProduct"})
 public class SearchProductServlet extends HttpServlet {
@@ -78,12 +78,12 @@ public class SearchProductServlet extends HttpServlet {
                 request.setAttribute("categoryId", product.getCategoryId());
                 request.setAttribute("brandId", product.getBrandId());
                 CategoryDAO categoryDAO = new CategoryDAO();
-                List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+                List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
                 request.setAttribute("categoryList", categoryList);
                 request.getRequestDispatcher("/WEB-INF/View/customer/productManagement/searchProduct/searchProduct.jsp").forward(request, response);
             } else {
                 CategoryDAO categoryDAO = new CategoryDAO();
-                List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+                List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
                 request.setAttribute("categoryList", categoryList);
                 request.getRequestDispatcher("/WEB-INF/View/customer/productManagement/searchProduct/searchProduct.jsp").forward(request, response);
 
@@ -118,3 +118,4 @@ public class SearchProductServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
