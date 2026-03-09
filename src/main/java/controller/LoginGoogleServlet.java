@@ -15,12 +15,12 @@ import dao.AccountDAO;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -136,23 +136,23 @@ public class LoginGoogleServlet extends HttpServlet {
         if (email != null && phone != null && !phone.isEmpty()) {
             boolean existed = dao.checkEmailExisted(email);
             if (existed) {
-                request.setAttribute("error", "Email đã tồn tại trong hệ thống.");
+                request.setAttribute("error", "Email Ä‘Ã£ tá»“n táº¡i trong há»‡ thá»‘ng.");
                 request.getRequestDispatcher("WEB-INF/View/account/save-phone.jsp").forward(request, response);
                 return;
             }
-            // ✅ Tạo mới account Google
-            dao.addNewAccountGoogle(email, name, phone); // 👈 sửa để có phone
+            // âœ… Táº¡o má»›i account Google
+            dao.addNewAccountGoogle(email, name, phone); // ðŸ‘ˆ sá»­a Ä‘á»ƒ cÃ³ phone
             Account acc = dao.getAccountByEmail(email);
             int role = dao.getRoleByEmail(email);
 
-            // Lưu session
+            // LÆ°u session
             session.setAttribute("user", acc);
             session.setAttribute("role", role);
             session.setAttribute("accountId", acc.getAccountID());
 
             response.sendRedirect("Home");
         } else {
-            request.setAttribute("error", "Vui lòng nhập số điện thoại.");
+            request.setAttribute("error", "Vui lÃ²ng nháº­p sá»‘ Ä‘iá»‡n thoáº¡i.");
             request.getRequestDispatcher("WEB-INF/View/account/save-phone.jsp").forward(request, response);
         }
     }
@@ -168,3 +168,4 @@ public class LoginGoogleServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
