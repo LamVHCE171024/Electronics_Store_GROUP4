@@ -1,12 +1,12 @@
 
 package controller;
 import dao.CartDAO;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -83,7 +83,7 @@ public class RemoveCartItemServlet extends HttpServlet {
                 boolean success = cartDAO.updateCartItemQuantity(cartItemId, newQuantity);
                 if (success) {
                     session.setAttribute("message", "Quantity updated successfully!");
-                    session.setAttribute("lastUpdatedCartItemId", cartItemId); // Lưu cartItemId vừa cập nhật
+                    session.setAttribute("lastUpdatedCartItemId", cartItemId); // LÆ°u cartItemId vá»«a cáº­p nháº­t
                     response.sendRedirect("CartList?accountId=" + accountIdRaw);
                 } else {
                     System.out.println("Failed to update quantity for CartItemID: " + cartItemId);
@@ -110,3 +110,4 @@ public class RemoveCartItemServlet extends HttpServlet {
         return "Servlet to remove or update items in cart";
     }
 }
+
