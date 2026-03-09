@@ -8,12 +8,12 @@ import dao.AccountDAO;
 import dao.CategoryDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import model.Category;
 import utils.EmailService;
@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAO();
-        List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+        List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
         request.setAttribute("categoryList", categoryList);
         request.getRequestDispatcher("WEB-INF/View/account/register.jsp").forward(request, response);
     }
@@ -115,9 +115,9 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
         HttpSession session = request.getSession();
-        // Gửi OTP có kiểm soát số lần và thời hạn
+        // Gá»­i OTP cÃ³ kiá»ƒm soÃ¡t sá»‘ láº§n vÃ  thá»i háº¡n
         int otpCode = EmailService.generateVerificationCode();
-        boolean emailSent = EmailService.sendOTPEmail(email, otpCode, "REGISTER"); // Gửi đúng mã vừa tạo
+        boolean emailSent = EmailService.sendOTPEmail(email, otpCode, "REGISTER"); // Gá»­i Ä‘Ãºng mÃ£ vá»«a táº¡o
         OTPManager otpManager = new OTPManager(otpCode, 5);
         session.setAttribute("otpManager", otpManager);
         session.setAttribute("otpPurpose", "register");
@@ -127,7 +127,7 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        // Lưu tạm thông tin người dùng chờ xác minh
+        // LÆ°u táº¡m thÃ´ng tin ngÆ°á»i dÃ¹ng chá» xÃ¡c minh
         session.setAttribute("tempEmail", email);
         session.setAttribute("tempPassword", password);
         session.setAttribute("tempFullName", fullName);
@@ -147,3 +147,4 @@ public class RegisterServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
