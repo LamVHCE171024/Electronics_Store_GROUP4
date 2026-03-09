@@ -8,12 +8,12 @@ package controller;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -71,12 +71,12 @@ public class ChangePasswordStaffServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Integer staffId = (Integer) session.getAttribute("accountId"); // lấy từ session
+        Integer staffId = (Integer) session.getAttribute("accountId"); // láº¥y tá»« session
 
         String newPassword = request.getParameter("newPassword");
         String confirmPassword = request.getParameter("confirmPassword");
 
-        String passwordPattern = "^.{9,}$"; // ít nhất 9 ký tự
+        String passwordPattern = "^.{9,}$"; // Ã­t nháº¥t 9 kÃ½ tá»±
 
         // Validate
         if (!newPassword.equals(confirmPassword)) {
@@ -117,3 +117,4 @@ public class ChangePasswordStaffServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
