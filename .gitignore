@@ -1,0 +1,14 @@
+target/
+*.class
+*.log
+*.tmp
+.DS_Store
+.idea/
+*.iml
+nbproject/private/
+
+Tomcat.dpf
+src/main/webapp/WEB-INF/classes/
+src/main/webapp/WEB-INF/lib/
+
+/target/

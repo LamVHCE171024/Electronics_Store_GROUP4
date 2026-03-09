@@ -1,0 +1,302 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 13, 2025, 7:31:49 PM
+    Author     : HP
+*/
+
+/* Common Profile Styles */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.main-account {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    min-height: 80vh;
+    margin-top: 48px;
+}
+
+/* Sidebar Styles */
+.account-sidebar {
+    min-width: 250px;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(44,62,80,0.08);
+    padding: 24px 0 8px 0;
+    margin-right: 24px;
+}
+
+.account-sidebar .avatar {
+    width: 54px;
+    height: 54px;
+    font-size: 2.3rem;
+}
+
+.account-sidebar .account-menu .nav-link {
+    color: #212529;
+    font-size: 1rem;
+    padding: 12px 28px;
+    border-radius: 8px 0 0 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    transition: background .18s, color .16s;
+}
+
+.account-sidebar .account-menu .nav-link.active, 
+.account-sidebar .account-menu .nav-link:hover {
+    background: #f3f7ff;
+    color: #2963db;
+}
+
+.account-sidebar .account-menu .nav-link.text-danger {
+    color: #dc3545 !important;
+}
+
+.account-sidebar .account-menu .nav-link.text-danger:hover {
+    background: #ffeaea;
+    color: #dc3545 !important;
+}
+
+.account-sidebar .account-menu {
+    margin-top: 18px;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    max-width: 700px;
+    border: none;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 25px 30px;
+}
+
+.profile-header h4 {
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+/* Profile Table Styles (View Profile) */
+.profile-table th {
+    color: #333;
+    font-weight: 600;
+    padding: 15px 0;
+    border: none;
+    width: 180px;
+    vertical-align: middle;
+}
+
+.profile-table td {
+    color: #555;
+    padding: 15px 0;
+    border: none;
+    vertical-align: middle;
+}
+
+.profile-table tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-table tr:last-child {
+    border-bottom: none;
+}
+
+.profile-value {
+    font-weight: 500;
+}
+
+/* Form Styles (Update Profile) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    color: #667eea;
+    margin-right: 8px;
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    background: white;
+}
+
+/* Gender Options */
+.gender-options {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 8px;
+}
+
+.gender-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.gender-option:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+/* Error Messages */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    font-style: italic;
+    font-weight: 500;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #ffeaea 0%, #ffccd5 100%);
+    color: #c53030;
+}
+
+.alert-danger i {
+    margin-right: 8px;
+}
+
+/* Profile Actions */
+.profile-actions {
+    padding-top: 25px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button Styles */
+.btn-change-password {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.btn-change-password:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.15);
+    color: white;
+}
+
+.btn-update {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.3);
+    color: white;
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+        cursor: pointer;
+
+    font-size: 14px;
+}
+
+.btn-cancel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 87, 108, 0.3);
+    color: white;
+}
+

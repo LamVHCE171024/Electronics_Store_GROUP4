@@ -1,0 +1,85 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 13, 2025, 5:40:42 PM
+    Author     : HP
+*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.delete-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 40px 35px;
+    text-align: center;
+}
+.delete-icon {
+    font-size: 4rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+.delete-title {
+    color: #e74c3c;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.delete-msg {
+    margin-bottom: 30px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #555;
+}
+.supplier-info {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+}
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn {
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-delete {
+    background: #e74c3c;
+    color: #fff;
+}
+.btn-delete:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+.btn-cancel {
+    background: #6c757d;
+    color: #fff;
+}
+.btn-cancel:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+.warning-text {
+    color: #dc3545;
+    font-weight: 500;
+    margin-top: 15px;
+}

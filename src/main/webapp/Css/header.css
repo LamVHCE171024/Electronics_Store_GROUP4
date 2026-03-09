@@ -1,0 +1,161 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 16, 2025, 11:53:52 AM
+    Author     : HP - Gia Khiêm
+*/
+
+/* Style cơ bản cho dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 0;
+}
+
+/* Khi hover vào danh mục chính */
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Style submenu bên phải */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Hiển thị submenu khi hover */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Thêm một chút style để submenu rõ ràng hơn */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Optional: để tránh bị che mất submenu */
+.dropdown-submenu > .dropdown-menu {
+    white-space: nowrap;
+}
+
+/*<======== Bố cục phần header ==========>*/
+
+ /*    <=== bố cục các phần header*/
+    .header-top {
+    padding: 12px 16px;
+    flex-wrap: nowrap;
+    gap: 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Logo */
+.header-logo {
+    height: 40px;
+    object-fit: contain;
+    max-width: 120px;
+}
+
+/* Nút Categories */
+.category-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.category-btn:hover {
+    background-color: #e2e6ea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar */
+/* Thanh tìm kiếm dài và bo tròn */
+.search-wrapper {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.search-bar input {
+    padding-right: 48px;
+    height: 42px;
+    border-radius: 24px; /* Bo tròn nhiều hơn */
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    padding-left: 16px;
+    font-size: 15px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 0 0.2rem rgba(102, 175, 233, .25);
+}
+
+/* Nút tìm kiếm */
+.search-btn {
+    border: none;
+    background: transparent;
+    color: #555;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.search-btn:hover {
+    color: #000;
+}
+
+
+/* Tài khoản & Giỏ hàng */
+.header-right a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 38px;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.header-right a:hover {
+    background-color: #e2e6ea;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    /*    <=== bố cục các phần header*/
+/*<======== Bố cục phần header ==========>*/

@@ -1,0 +1,64 @@
+/* voucherList.css */
+.my-container {
+    display: flex;
+}
+main.main-content {
+    flex: 1;
+    margin-left: 220px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 32px 0;
+}
+h1 {
+    color: #232946;
+    margin-bottom: 24px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    background: transparent;
+}
+.table thead th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    border-radius: 8px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: black;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.form-control {
+    border-radius: 8px;
+}
