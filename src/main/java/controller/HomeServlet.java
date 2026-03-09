@@ -9,11 +9,11 @@ import dao.CategoryDAO;
 import dao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import model.Brand;
 import model.Category;
@@ -21,7 +21,7 @@ import model.Product;
 
 /**
  *
- * @author HP - Gia Khiêm
+ * @author pc
  */
 @WebServlet(name = "HomeServlet", urlPatterns = {"/Home"})
 public class HomeServlet extends HttpServlet {
@@ -67,7 +67,7 @@ public class HomeServlet extends HttpServlet {
         CategoryDAO categoryDAO = new CategoryDAO();
         BrandDAO brandDAO = new BrandDAO();
         ProductDAO productDAO = new ProductDAO();
-        List<Category> categoryList = categoryDAO.getAllCategory(); // hoặc getAllCategory()
+        List<Category> categoryList = categoryDAO.getAllCategory(); // hoáº·c getAllCategory()
         List<Brand> brandList = brandDAO.getAllBrand();
         
         List<Product> productListNew = productDAO.getProductIsNew();
@@ -114,3 +114,4 @@ public class HomeServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

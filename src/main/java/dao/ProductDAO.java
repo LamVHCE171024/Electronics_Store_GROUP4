@@ -29,7 +29,7 @@ import utils.DBContext;
 
 /**
  *
- * @author HP - Gia Khiêm
+ * @author pc
  */
 public class ProductDAO extends DBContext {
 
@@ -74,7 +74,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -126,7 +128,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -178,7 +182,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -228,7 +234,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -240,16 +248,16 @@ public class ProductDAO extends DBContext {
     }
 
     public List<Product> getProductList() {
-    List<Product> list = new ArrayList<>();
-    String sql = "SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Discount, "
-               + "p.SupplierID, p.CategoryID, p.BrandID, p.IsFeatured, p.IsBestSeller, "
-               + "p.IsNew, p.WarrantyPeriod, p.IsActive, pi.ImageURL "
-               + "FROM Products p "
-               + "LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID";
+        List<Product> list = new ArrayList<>();
+        String sql = "SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Discount, "
+                + "p.SupplierID, p.CategoryID, p.BrandID, p.IsFeatured, p.IsBestSeller, "
+                + "p.IsNew, p.WarrantyPeriod, p.IsActive, pi.ImageURL "
+                + "FROM Products p "
+                + "LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID";
 
-    try (PreparedStatement ps = conn.prepareStatement(sql);
-         ResultSet rs = ps.executeQuery()) {
-        while (rs.next()) {
+        try (PreparedStatement ps = conn.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
                 int productID = rs.getInt("ProductID");
                 String productName = rs.getString("ProductName");
                 String description = rs.getString("Description");
@@ -257,7 +265,7 @@ public class ProductDAO extends DBContext {
                 int discount = rs.getInt("Discount");
                 int supplierId = rs.getInt("SupplierID");
                 if (rs.wasNull()) {
-                    supplierId = 0; 
+                    supplierId = 0;
                 }
                 int categoryId = rs.getInt("CategoryID");
                 if (rs.wasNull()) {
@@ -274,7 +282,8 @@ public class ProductDAO extends DBContext {
                 boolean isActive = rs.getBoolean("IsActive");
                 String imageUrl = rs.getString("ImageURL");
 
-                list.add(new Product(productID, productName, description, price, discount, supplierId, categoryId, brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl));
+                list.add(new Product(productID, productName, description, price, discount, supplierId, categoryId,
+                        brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -292,9 +301,9 @@ public class ProductDAO extends DBContext {
                 + "LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID "
                 + "WHERE LOWER(p.ProductName) LIKE ?";
 
-        try ( PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, "%" + keyword.toLowerCase() + "%");
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     int productID = rs.getInt("ProductID");
                     String productName = rs.getString("ProductName");
@@ -322,7 +331,8 @@ public class ProductDAO extends DBContext {
                     boolean isActive = rs.getBoolean("IsActive");
                     String imageUrl = rs.getString("ImageURL");
 
-                    list.add(new Product(productID, productName, description, price, discount, supplierId, categoryId, brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl));
+                    list.add(new Product(productID, productName, description, price, discount, supplierId, categoryId,
+                            brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl));
                 }
             }
         } catch (Exception e) {
@@ -341,14 +351,14 @@ public class ProductDAO extends DBContext {
                 + "LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID "
                 + "WHERE p.ProductID = ?";
 
-        try ( PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, productID);
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     String productName = rs.getString("ProductName");
                     String description = rs.getString("Description");
                     BigDecimal price = rs.getBigDecimal("Price");
-                    int discount = rs.getInt("Discount");   
+                    int discount = rs.getInt("Discount");
                     int supplierId = rs.getInt("SupplierID");
                     if (rs.wasNull()) {
                         supplierId = 0;
@@ -368,7 +378,8 @@ public class ProductDAO extends DBContext {
                     boolean isActive = rs.getBoolean("IsActive");
                     String imageUrl = rs.getString("ImageURL");
 
-                    product = new Product(productID, productName, description, price, discount, supplierId, categoryId, brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl);
+                    product = new Product(productID, productName, description, price, discount, supplierId, categoryId,
+                            brandId, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl);
                 }
             }
         } catch (Exception e) {
@@ -380,7 +391,7 @@ public class ProductDAO extends DBContext {
 
     public boolean activateProduct(int productId) {
         String sql = "UPDATE Products SET IsActive = 1 WHERE ProductID = ?";
-        try ( PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, productId);
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
@@ -392,7 +403,7 @@ public class ProductDAO extends DBContext {
 
     public boolean rejectProduct(int productId) {
         String sql = "UPDATE Products SET IsActive = 0 WHERE ProductID = ?";
-        try ( PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, productId);
             int rowsAffected = ps.executeUpdate();
             System.out.println("Rows affected by rejectProduct: " + rowsAffected + " for ProductID: " + productId);
@@ -407,7 +418,7 @@ public class ProductDAO extends DBContext {
     public boolean saveNotification(String title, String message, int productId) {
         String sql = "INSERT INTO Notifications (Title, Message, Type, IsRead, CreatedAt, RelatedEntityID, RelatedEntityType) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try ( PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, title);
             ps.setString(2, message);
             ps.setString(3, "ProductUpdate");
@@ -423,26 +434,26 @@ public class ProductDAO extends DBContext {
         }
     }
 
-//    <===================================================== GIA KHIÊM ======================================================>
+    // <===================================================== GIA KHIÊM
+    // ======================================================>
     public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
-        String sql = 
-    "SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Discount, " +
-    "       isd.UnitPrice, isd.Quantity, " +
-    "       p.SupplierID, sup.Name, cate.CategoryID, cate.CategoryName, " +
-    "       br.BrandID, br.BrandName, p.IsFeatured, p.IsBestSeller, p.IsNew, " +
-    "       p.WarrantyPeriod, p.isActive, pro.ImageURL " +
-    "FROM Products p " +
-    "JOIN ProductImages pro ON p.ProductID = pro.ProductID " +
-    "JOIN Categories cate ON cate.CategoryID = p.CategoryID " +
-    "JOIN Brands br on br.BrandID = p.BrandID " +
-    "JOIN Suppliers sup on sup.SupplierID = p.SupplierID " +
-    "OUTER APPLY ( " +
-    "    SELECT TOP 1 isd.UnitPrice, isd.Quantity " +
-    "    FROM ImportStockDetails isd " +
-    "    WHERE isd.ProductID = p.ProductID " +
-    "    ORDER BY isd.ImportID DESC " +
-    ") isd";
+        String sql = "SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Discount, " +
+                "       isd.UnitPrice, isd.Quantity, " +
+                "       p.SupplierID, sup.Name, cate.CategoryID, cate.CategoryName, " +
+                "       br.BrandID, br.BrandName, p.IsFeatured, p.IsBestSeller, p.IsNew, " +
+                "       p.WarrantyPeriod, p.isActive, pro.ImageURL " +
+                "FROM Products p " +
+                "JOIN ProductImages pro ON p.ProductID = pro.ProductID " +
+                "JOIN Categories cate ON cate.CategoryID = p.CategoryID " +
+                "JOIN Brands br on br.BrandID = p.BrandID " +
+                "JOIN Suppliers sup on sup.SupplierID = p.SupplierID " +
+                "OUTER APPLY ( " +
+                "    SELECT TOP 1 isd.UnitPrice, isd.Quantity " +
+                "    FROM ImportStockDetails isd " +
+                "    WHERE isd.ProductID = p.ProductID " +
+                "    ORDER BY isd.ImportID DESC " +
+                ") isd";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -470,7 +481,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -523,7 +536,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -575,7 +590,9 @@ public class ProductDAO extends DBContext {
                 String supplierName = rs.getString("Name");
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -623,7 +640,9 @@ public class ProductDAO extends DBContext {
 
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
 
-                product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                product = new Product(productId, productName, description, price, discount, supplierId, supplierName,
+                        categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod,
+                        isActive, imageUrl, unitPrice);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -651,7 +670,8 @@ public class ProductDAO extends DBContext {
                 String imageUrl2 = rs.getString("ImageURL2");
                 String imageUrl3 = rs.getString("ImageURL3");
                 String imageUrl4 = rs.getString("ImageURL4");
-                ProductDetail productDetail = new ProductDetail(productDetailId, productId, categoryDetailId, attributeValue, imageUrl1, imageUrl2, imageUrl3, imageUrl4);
+                ProductDetail productDetail = new ProductDetail(productDetailId, productId, categoryDetailId,
+                        attributeValue, imageUrl1, imageUrl2, imageUrl3, imageUrl4);
 
                 productDetailList.add(productDetail);
             }
@@ -681,7 +701,8 @@ public class ProductDAO extends DBContext {
                 String imageUrl2 = rs.getString("ImageURL2");
                 String imageUrl3 = rs.getString("ImageURL3");
                 String imageUrl4 = rs.getString("ImageURL4");
-                productDetail = new ProductDetail(productDetailId, productId, categoryDetailId, attributeValue, imageUrl1, imageUrl2, imageUrl3, imageUrl4);
+                productDetail = new ProductDetail(productDetailId, productId, categoryDetailId, attributeValue,
+                        imageUrl1, imageUrl2, imageUrl3, imageUrl4);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -692,7 +713,7 @@ public class ProductDAO extends DBContext {
     public boolean deleteProduct(int productId) {
         String sql = "UPDATE Products SET isActive = 0 WHERE ProductID = ?";
 
-        try ( PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, productId);
 
@@ -704,11 +725,11 @@ public class ProductDAO extends DBContext {
             return false;
         }
     }
-    
+
     public boolean deleteProductWhenCancel(int productId) {
         String sql = "Delete Products WHERE ProductID = ?";
 
-        try ( PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, productId);
 
@@ -720,8 +741,9 @@ public class ProductDAO extends DBContext {
             return false;
         }
     }
-    
-    public boolean updateProductInfo(int id, String productName, BigDecimal price, int suppliers, int category, int brand, boolean isFeatured, boolean isBestSeller,
+
+    public boolean updateProductInfo(int id, String productName, BigDecimal price, int suppliers, int category,
+            int brand, boolean isFeatured, boolean isBestSeller,
             boolean pnew, boolean isActive, String img) {
         String sql1 = "UPDATE Products SET ProductName = ?, Price = ?, SupplierID = ?, CategoryID = ?, "
                 + "BrandID = ?, IsFeatured = ?, IsBestSeller = ?, IsNew = ?, IsActive = ? WHERE ProductID = ?";
@@ -729,7 +751,8 @@ public class ProductDAO extends DBContext {
         String sql2 = "UPDATE ProductImages SET ImageURL = ? WHERE ProductID = ?";
 
         try (
-                 PreparedStatement pstmt1 = conn.prepareStatement(sql1);  PreparedStatement pstmt2 = conn.prepareStatement(sql2)) {
+                PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+                PreparedStatement pstmt2 = conn.prepareStatement(sql2)) {
             // Update product
             pstmt1.setString(1, productName);
             pstmt1.setBigDecimal(2, price);
@@ -757,7 +780,8 @@ public class ProductDAO extends DBContext {
         return false;
     }
 
-    public boolean updateProductDetail(int productId, int productDetailID, String proDetail, String url1, String url2, String url3, String url4, String mainUrl) {
+    public boolean updateProductDetail(int productId, int productDetailID, String proDetail, String url1, String url2,
+            String url3, String url4, String mainUrl) {
         String sql1 = "UPDATE ProductImages SET ImageURL = ? where ProductID = ?";
 
         String sql2 = "UPDATE ProductDetails SET AttributeValue = ? WHERE ProductDetailID  = ?";
@@ -765,7 +789,9 @@ public class ProductDAO extends DBContext {
         String sql3 = "UPDATE ImgProductDetails SET ImageURL1 = ?, ImageURL2 = ?, ImageURL3 = ?, ImageURL4 = ? WHERE ProductID = ?";
 
         try (
-                 PreparedStatement pstmt1 = conn.prepareStatement(sql1);  PreparedStatement pstmt2 = conn.prepareStatement(sql2);  PreparedStatement pstmt3 = conn.prepareStatement(sql3)) {
+                PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+                PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+                PreparedStatement pstmt3 = conn.prepareStatement(sql3)) {
 
             // Update mainimage
             pstmt1.setString(1, mainUrl);
@@ -797,7 +823,7 @@ public class ProductDAO extends DBContext {
 
     public int getTotalProducts() {
         String sql = "SELECT COUNT(*) FROM Products";
-        try ( PreparedStatement ps = conn.prepareStatement(sql);  ResultSet rs = ps.executeQuery()) {
+        try (PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
                 return rs.getInt(1);
             }
@@ -807,14 +833,16 @@ public class ProductDAO extends DBContext {
         return 0;
     }
 
-    public int insertProduct(String name, String description, int suppliers, int stock, int category, int brand, boolean isFeatured, boolean isBestSeller,
+    public int insertProduct(String name, String description, int suppliers, int stock, int category, int brand,
+            boolean isFeatured, boolean isBestSeller,
             boolean isNew, boolean isActive, String url) {
         boolean rowInserted = false;
         int productId = 0;
         String sql = "INSERT INTO Products (ProductName, Description, CategoryID, BrandID, IsFeatured, IsBestSeller, IsNew, isActive, SupplierID ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String sql2 = "INSERT INTO ProductImages (ProductID, ImageURL) VALUES (?, ?)";
 
-        try ( PreparedStatement stmtProduct = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);  PreparedStatement stmtImage = conn.prepareStatement(sql2)) {
+        try (PreparedStatement stmtProduct = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement stmtImage = conn.prepareStatement(sql2)) {
 
             stmtProduct.setString(1, name);
             stmtProduct.setString(2, description);
@@ -828,7 +856,7 @@ public class ProductDAO extends DBContext {
             rowInserted = stmtProduct.executeUpdate() > 0;
 
             if (rowInserted) {
-                try ( ResultSet generatedKeys = stmtProduct.getGeneratedKeys()) {
+                try (ResultSet generatedKeys = stmtProduct.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         productId = generatedKeys.getInt(1);
 
@@ -847,10 +875,11 @@ public class ProductDAO extends DBContext {
         return productId;
     }
 
-    public boolean insertImageProductDetail(String imgaUrl1, String imgaUrl2, String imgaUrl3, String imgaUrl4, int productId) {
+    public boolean insertImageProductDetail(String imgaUrl1, String imgaUrl2, String imgaUrl3, String imgaUrl4,
+            int productId) {
         boolean rowInserted = false;
         String sql = "INSERT ImgProductDetails (ImageURL1, ImageURL2, ImageURL3, ImageURL4, ProductID ) VALUES (?, ?, ?, ?, ?)";
-        try ( PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, imgaUrl1);
             stmt.setString(2, imgaUrl2);
@@ -872,7 +901,7 @@ public class ProductDAO extends DBContext {
         boolean rowInserted = false;
         String sql = "INSERT INTO ProductDetails (ProductID, CategoryDetailID, AttributeValue) VALUES (?, ?, ?)";
 
-        try ( PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, productId);
             stmt.setInt(2, categoryId);
@@ -934,7 +963,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandIdDB, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandIdDB, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -987,7 +1018,9 @@ public class ProductDAO extends DBContext {
                 String supplierName = rs.getString("Name");
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryIdDB, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryIdDB, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -1044,7 +1077,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -1098,7 +1133,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandIdDB, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandIdDB, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -1113,7 +1150,7 @@ public class ProductDAO extends DBContext {
         List<Product> list = new ArrayList<>();
         String sql = "SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Discount, "
                 + "isd.UnitPrice, isd.Quantity, "
-                + "p.SupplierID, sup.Name, cate.CategoryID, cate.CategoryName, br.BrandID, br.BrandName, p.IsFeatured, p.IsBestSeller, p.IsNew, p.WarrantyPeriod, p.isActive, pro.ImageURL " 
+                + "p.SupplierID, sup.Name, cate.CategoryID, cate.CategoryName, br.BrandID, br.BrandName, p.IsFeatured, p.IsBestSeller, p.IsNew, p.WarrantyPeriod, p.isActive, pro.ImageURL "
                 + "FROM Products p "
                 + "JOIN ProductImages pro ON p.ProductID = pro.ProductID "
                 + "JOIN Categories cate ON cate.CategoryID = p.CategoryID "
@@ -1149,7 +1186,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                Product product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                Product product = new Product(productId, productName, description, price, discount, supplierId,
+                        supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew,
+                        warrantyPeriod, isActive, imageUrl, unitPrice);
 
                 list.add(product);
             }
@@ -1198,7 +1237,9 @@ public class ProductDAO extends DBContext {
                 BigDecimal unitPrice = rs.getBigDecimal("UnitPrice");
                 int quatity = rs.getInt("Quantity");
 
-                product = new Product(productId, productName, description, price, discount, supplierId, supplierName, categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod, isActive, imageUrl, unitPrice);
+                product = new Product(productId, productName, description, price, discount, supplierId, supplierName,
+                        categoryId, categoryName, brandId, brandName, isFeatured, isBestSeller, isNew, warrantyPeriod,
+                        isActive, imageUrl, unitPrice);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1206,14 +1247,16 @@ public class ProductDAO extends DBContext {
         return product;
     }
 
-//    <===================================================== GIA KHIÊM ======================================================>
+    // <===================================================== GIA KHIÊM
+    // ======================================================>
     public List<ProductVariant> getAllVariantsForCartItems(List<CartItem> cartItems) {
         List<ProductVariant> list = new ArrayList<>();
         if (cartItems == null || cartItems.isEmpty()) {
             return list;
         }
 
-        StringBuilder sql = new StringBuilder("SELECT VariantID, ProductID, Color, Storage, Quantity, Price, Discount, ImageURL, IsActive ");
+        StringBuilder sql = new StringBuilder(
+                "SELECT VariantID, ProductID, Color, Storage, Quantity, Price, Discount, ImageURL, IsActive ");
         sql.append("FROM ProductVariants WHERE ProductID IN (");
         for (int i = 0; i < cartItems.size(); i++) {
             sql.append("?");
@@ -1223,11 +1266,11 @@ public class ProductDAO extends DBContext {
         }
         sql.append(")");
 
-        try ( PreparedStatement ps = conn.prepareStatement(sql.toString())) {
+        try (PreparedStatement ps = conn.prepareStatement(sql.toString())) {
             for (int i = 0; i < cartItems.size(); i++) {
                 ps.setInt(i + 1, cartItems.get(i).getProduct().getProductId());
             }
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     int variantId = rs.getInt("VariantID");
                     int productId = rs.getInt("ProductID");
@@ -1239,7 +1282,8 @@ public class ProductDAO extends DBContext {
                     String imageUrl = rs.getString("ImageURL");
                     boolean isActive = rs.getBoolean("IsActive");
 
-                    ProductVariant variant = new ProductVariant(variantId, productId, color, storage, quantity, price, discount, imageUrl, isActive);
+                    ProductVariant variant = new ProductVariant(variantId, productId, color, storage, quantity, price,
+                            discount, imageUrl, isActive);
                     list.add(variant);
                 }
             }
@@ -1249,36 +1293,39 @@ public class ProductDAO extends DBContext {
 
         return list;
     }
-    public void increaseStock(int productID, int quantity) {
-    String sql = "UPDATE OrderDetails SET Quantity = Quantity - ? WHERE ProductID = ?";
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-        ps.setInt(1, quantity);
-        ps.setInt(2, productID);
-        ps.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-}
-   //----Tai---//
-    public int countLowStockDynamic(int threshold) {
-    String sql = "SELECT COUNT(*) AS LowStockCount FROM ( " +
-                 "SELECT p.ProductID, " +
-                 "ISNULL(SUM(isd.Quantity), 0) - ISNULL((SELECT SUM(od.Quantity) FROM OrderDetails od WHERE od.ProductID = p.ProductID), 0) AS StockLeft " +
-                 "FROM Products p " +
-                 "LEFT JOIN ImportStockDetails isd ON p.ProductID = isd.ProductID " +
-                 "GROUP BY p.ProductID " +
-                 ") AS StockView WHERE StockLeft <= ?";
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-        ps.setInt(1, threshold); // Ví dụ, threshold = 5
-        try (ResultSet rs = ps.executeQuery()) {
-            if (rs.next()) return rs.getInt(1);
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    return 0;
-}
 
+    public void increaseStock(int productID, int quantity) {
+        String sql = "UPDATE OrderDetails SET Quantity = Quantity - ? WHERE ProductID = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, quantity);
+            ps.setInt(2, productID);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // ----pc - Group 4---//
+    public int countLowStockDynamic(int threshold) {
+        String sql = "SELECT COUNT(*) AS LowStockCount FROM ( " +
+                "SELECT p.ProductID, " +
+                "ISNULL(SUM(isd.Quantity), 0) - ISNULL((SELECT SUM(od.Quantity) FROM OrderDetails od WHERE od.ProductID = p.ProductID), 0) AS StockLeft "
+                +
+                "FROM Products p " +
+                "LEFT JOIN ImportStockDetails isd ON p.ProductID = isd.ProductID " +
+                "GROUP BY p.ProductID " +
+                ") AS StockView WHERE StockLeft <= ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, threshold); // Ví dụ, threshold = 5
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next())
+                    return rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     public Map<Integer, Integer> getAllProductStocks() {
         Map<Integer, Integer> stockMap = new HashMap<>();
@@ -1287,7 +1334,7 @@ public class ProductDAO extends DBContext {
                 + "FROM Products p "
                 + "LEFT JOIN ImportStockDetails isd ON p.ProductID = isd.ProductID "
                 + "GROUP BY p.ProductID";
-        try ( PreparedStatement ps = conn.prepareStatement(sql);  ResultSet rs = ps.executeQuery()) {
+        try (PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 int productId = rs.getInt("ProductID");
                 int stock = rs.getInt("Stock");
